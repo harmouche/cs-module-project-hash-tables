@@ -22,6 +22,12 @@ class HashTable:
 
     def __init__(self, capacity):
         # Your code here
+        self.capacity = capacity
+        if capacity < MIN_CAPACITY:
+            self.capacity = MIN_CAPACITY
+        self.hash_array = capacity * [None]
+        self.increment = 0
+
 
 
     def get_num_slots(self):
@@ -140,9 +146,9 @@ if __name__ == "__main__":
         print(ht.get(f"line_{i}"))
 
     # Test resizing
-    old_capacity = ht.get_num_slots()
-    ht.resize(ht.capacity * 2)
-    new_capacity = ht.get_num_slots()
+    # old_capacity = ht.get_num_slots()
+    # ht.resize(ht.capacity * 2)
+    # new_capacity = ht.get_num_slots()
 
     print(f"\nResized from {old_capacity} to {new_capacity}.\n")
 
